@@ -1,20 +1,24 @@
 import express from "express";
+import http from "http";
+import reload from "reload";
+import router from "./routes/index.js";
+
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send('index');
-});
+// Enable pug - template engine to use in this project
+app.set('view engine', 'pug')
 
-app.get("/about", (req, res) => {
-  res.send('about');
-});
+// Define public folder
+app.use(express.static('public'));
 
-app.get("/items", (req, res) => {
-  res.send('items');
-});
+// Add router
+app.use('/', router);
 
-app.listen(port, () => {
+const server = http.createServer(app);
+
+server.listen(port, () => {
   console.log(`El servidor esta corriendo en ${port}`);
 });
+reload(app);

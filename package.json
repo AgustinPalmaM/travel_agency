@@ -1,0 +1,26 @@
+{
+  "name": "agenciaviajesnode",
+  "version": "1.0.0",
+  "description": "My first project with node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinPalmaM/travel_agency.git"
+  },
+  "type": "module",
+  "author": "Agustin Palma M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgustinPalmaM/travel_agency/issues"
+  },
+  "homepage": "https://github.com/AgustinPalmaM/travel_agency#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

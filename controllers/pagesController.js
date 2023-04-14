@@ -1,3 +1,5 @@
+import { Travel } from "../models/Travel.js"
+
 const indexPage = (req, res) => {
   res.render('index', {
     pagina: 'Index'
@@ -10,9 +12,13 @@ const aboutPage = (req, res) => {
   })
 }
 
-const travelsPage = (req, res) => {
+const travelsPage = async (req, res) => {
+
+  const travels = await Travel.findAll();
+
   res.render('travels', {
-    pagina: 'Travels'
+    pagina: 'Next Trips',
+    travels
   })
 }
 

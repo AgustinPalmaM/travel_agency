@@ -1,7 +1,32 @@
 extends ./layout/index
 
 block content
-  p About us
-  img(src="img/cupon.jpg", alt="cupon image")
+  main.container.mt-5
+    .row 
+      .col-md-5
+        img(src="img/nosotros.jpg", alt="image about us", class="img-fluid")
+      .col-md-7
+        h1=pagina
 
+        blockquote  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non consectetur nunc, at euismod velit. Vestibulum vel scelerisque augue, ultrices rhoncus sapien. Morbi non ultricies nisl. Duis quis placerat metus. Aenean luctus nec diam in tristique. Aenean molestie congue fringilla. Nulla facilisi. Duis vehicula iaculis risus ac dignissim. Vivamus porttitor sapien ut auctor malesuada. Maecenas vel lectus vel lectus volutpat viverra.
+
+        p Suspendisse id turpis dolor. Maecenas tristique odio at nisl lacinia tempus. Donec condimentum tincidunt faucibus. Phasellus pharetra eros nisi, non accumsan ex consequat et. Phasellus pharetra risus quam, vel ornare orci ultricies ac. Maecenas dui elit, finibus lobortis euismod eu, congue quis diam. Donec finibus arcu ut urna pellentesque, nec ultrices nisl ullamcorper. Aenean eget tempor ante. Sed fringilla neque rutrum, vulputate eros vitae, rhoncus eros. 
+
+        p Nulla pharetra aliquam luctus. Donec finibus ornare posuere. Maecenas a tincidunt nisi, id hendrerit lacus. In euismod porttitor turpis, sed ullamcorper leo consectetur vitae. Duis non aliquet est, et sagittis enim. Aliquam mollis erat et quam vestibulum dictum. 
+
+  .listado-iconos 
+    .container.mt-5.py-5.text-center 
+      .row 
+        .col-md-4 
+          img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+          h2.mb-4 Security 
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in laudantium nulla a! Debitis facere libero placeat.
+        .col-md-4
+          img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+          h2.mb-4 The best destinations
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in laudantium nulla a! Debitis facere libero placeat.
+        .col-md-4
+          img(src="img/icono_precios.svg", alt="icono precios", class="img-fluid mb-4")
+          h2.mb-4 Great prices
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in laudantium nulla a! Debitis facere libero placeat.
   script(src="/reload/reload.js") 

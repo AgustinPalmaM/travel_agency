@@ -3,25 +3,34 @@ import express from "express";
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('index')
+
+  res.render('index', {
+    pagina: 'Index'
+  })
 })
 
 router.get("/about", (req, res) => {
   
-  const travels = 'Travel to Spain';
-
   res.render('about', {
-    travels
-  });
+    pagina: 'About Us'
+  })
+
 });
 
-router.get("/items", (req, res) => {
+router.get("/travels", (req, res) => {
   
-  const travels = 'Travel to Spain';
+  res.render('travels', {
+    pagina: 'Travels'
+  })
+  
+});
 
-  res.render('items', {
-    travels
-  });
+router.get("/testimonials", (req, res) => {
+  
+  res.render('testimonials', {
+    pagina: 'Testimonials'
+  })
+  
 });
 
 

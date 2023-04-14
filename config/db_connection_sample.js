@@ -1,6 +1,6 @@
 import Sequelize from "sequelize";
 
-const db = new Sequelize('travel_agency', 'your user', 'your password', {
+const db = new Sequelize('your database name', 'your user', 'your password', {
   host: '127.0.0.1',
   port: '3306',
   dialect: 'mysql',

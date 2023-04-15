@@ -2,6 +2,24 @@ extends ./layout/index
 
 block content
   main.container.mt-5
-    .row 
-      h1=pagina
+    h1.text-center.mt-5 #{pagina}
+    .row
+      h2.d-block.w-100.text-center Add a testimonial 
+
+      .row.justify-content-center.col
+        .col-md-8 
+          form(action="" method="POST")
+            .form-group
+              label(for="nombre") Name 
+              input#nombre(type="text", placeholder="Your name here", name="nombre", class="form-control")
+            .form-group 
+              label(for="correo") Email 
+              input#correo(type="text", placeholder="Your email here", name="correo", class="form-control")
+            .form-group 
+              label(for="mensaje") Message
+              textarea#mensaje(type="text", placeholder="Your message here", name="mensaje", class="form-control", rows= 3)
+            input.btn.btn-success.btn-block(type="submit", value="Send Message")
+            
+            
+
   script(src="/reload/reload.js") 

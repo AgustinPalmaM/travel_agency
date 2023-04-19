@@ -4,7 +4,7 @@
   "description": "My first project with node",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -e index.js,pug"
+    "dev": "nodemon -e js,pug"
   },
   "repository": {
     "type": "git",

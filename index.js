@@ -24,6 +24,9 @@ app.use( (req, res, next ) => {
   return next();
 })
 
+// Add bodyparser to read data from forms
+app.use(express.urlencoded( { extended: true } ) )
+
 // Define public folder
 app.use(express.static('public'));
 
@@ -36,3 +39,5 @@ server.listen(port, () => {
   console.log(`El servidor esta corriendo en ${port}`);
 });
 reload(app);
+
+

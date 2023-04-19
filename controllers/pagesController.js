@@ -1,8 +1,10 @@
 import { Travel } from "../models/Travel.js"
+import { Testimonial } from "../models/Testimonial.js"
 
 const indexPage = (req, res) => {
   res.render('index', {
-    pagina: 'Index'
+    pagina: 'Index',
+    homeClass: 'home'
   })
 }
 
@@ -39,10 +41,16 @@ const detailTravelPage = async (req, res) => {
 
 }
 
-const testimonialsPage = (req, res) => {
-  res.render('testimonials', {
-    pagina: 'Testimonials'
-  })
+const testimonialsPage = async (req, res) => {
+  try {
+    const testimonials = await Testimonial.findAll();
+    res.render('testimonials', {
+      pagina: 'Testimonials',
+      testimonials
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export {

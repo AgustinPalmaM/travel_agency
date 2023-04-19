@@ -137,7 +137,7 @@ footer .nav a,
     font-size: 3rem;
 }
 
-.proximos-viajes p {
+.next-travels p {
     font-size: .9rem;
 }
 i {
@@ -145,11 +145,11 @@ i {
     font-size: 2rem;
 }
 
-.testimoniales p{
+.testimonials p{
     font-size: .8rem;
     font-weight: normal;
 }
-.testimoniales p::before {
+.testimonials p::before {
     background-image: url(../img/quote.jpg);
     background-repeat: no-repeat;
     background-position: center center;

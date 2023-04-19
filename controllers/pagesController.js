@@ -1,11 +1,22 @@
 import { Travel } from "../models/Travel.js"
 import { Testimonial } from "../models/Testimonial.js"
 
-const indexPage = (req, res) => {
-  res.render('index', {
-    pagina: 'Index',
-    homeClass: 'home'
-  })
+const indexPage = async(req, res) => {
+
+  // make a query with 3 travels from the database
+  try {
+
+    const travels = await Travel.findAll({limit: 3})
+
+    res.render('index', {
+      pagina: 'Index',
+      homeClass: 'home',
+      travels
+    })
+  } catch (error) {
+    console.log(error)
+  }
+
 }
 
 const aboutPage = (req, res) => {

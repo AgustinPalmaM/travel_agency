@@ -2,16 +2,20 @@ import { Travel } from "../models/Travel.js";
 import { Testimonial } from "../models/Testimonial.js";
 
 const indexPage = async (req, res) => {
-  // make a query with 3 travels from the database
+  // make a query with 3 travels and 3 testimonils from the database
+
+  const promiseDB = [];
+  promiseDB.push(Travel.findAll( { limit: 3 } ));
+  promiseDB.push(Testimonial.findAll( { limit: 3 } ));
+
   try {
-    const travels = await Travel.findAll( { limit: 3 } );
-    const testimonials = await Testimonial.findAll( { limit: 3 } )
+    const promiseResult = await Promise.all(promiseDB);
 
     res.render("index", {
       pagina: "Index",
       homeClass: "home",
-      travels,
-      testimonials
+      travels: promiseResult[0],
+      testimonials: promiseResult[1]
     });
   } catch (error) {
     console.log(error);

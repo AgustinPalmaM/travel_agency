@@ -4,19 +4,7 @@ block content
   main.container.mt-5
     h1.text-center.mt-5 #{ pagina }
     blockquote.text-center Read about experiencies from our customers
-    .row.testimonials
-      each testimonial in testimonials 
-        .col-md-6.col-lg-4.mb-4
-          .card 
-            |
-            .card-body 
-              |
-              blockquote.blockquote
-              p.mb-0 
-                |
-                | #{ testimonial.message }
-              footer.blockquote-footer
-                | #{ testimonial.name }
+      include ./layout/testimonials_block
     .row
       .col-md-12
         h2.d-block.w-100.text-center Add a testimonial
@@ -27,6 +15,7 @@ block content
 
       .row.justify-content-center.col
         .col-md-8 
+          |
           |
           form(action="", method="POST")
             .form-group
@@ -39,6 +28,7 @@ block content
               )
             .form-group 
               |
+              |
               label(for="correo") Email
               input#correo.form-control(
                 type="text",
@@ -47,6 +37,7 @@ block content
                 value=correo
               )
             .form-group 
+              |
               |
               label(for="mensaje") Message
               textarea#mensaje.form-control(
